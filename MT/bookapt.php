@@ -15,7 +15,7 @@ if(isset($_POST['apt']))
        if ($conn->query($sql) === TRUE) 
        {
     echo "appointment has been booked ";
-    header("location:profile.php");
+    header("location:bookapt.php");
         }
 else {
     echo "Error: " . $sql . "<br>" . $conn->error;
@@ -115,7 +115,12 @@ $conn->close();
               </a>
           </li> 
           
-          
+              <li class="sub-menu">
+                              <a href="diagnose.php">
+                                <i class="fa fa-dashboard"></i>
+                                <span>Diabetic Risk TEST   </span>
+                            </a>
+                        </li> 
            
           <li class="sub-menu">
             <a href="chat_p.php">

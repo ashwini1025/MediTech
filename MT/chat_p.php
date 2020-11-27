@@ -20,8 +20,21 @@ if(isset($_POST['sendmsg']))
         header("location:chat_p.php");
         }
  else {
-   echo wrong; 
+
 }
+
+ }
+   
+   if(isset($_POST['clearmsg']))
+   {
+       $sql_clear="DELETE FROM `chatmsg`;";
+       
+        if ($conn->query($sql_clear) === TRUE) 
+       {
+    
+        }
+   }
+ else {
 
    }
 ?>
@@ -112,6 +125,12 @@ if(isset($_POST['sendmsg']))
               </a>
           </li> 
           
+              <li class="sub-menu">
+                              <a href="diagnose.php">
+                                <i class="fa fa-dashboard"></i>
+                                <span>Diabetic Risk TEST   </span>
+                            </a>
+                        </li> 
           
            
           <li class="sub-menu">
@@ -183,11 +202,11 @@ if(isset($_POST['sendmsg']))
                 <input type="text" class="form-control" name="msgtext">
               </div>
               <div class="btn-group hidden-sm hidden-xs">
-                <button type="button" class="btn btn-white"><i class="fa fa-meh-o"></i></button>
-                <button type="button" class="btn btn-white"><i class=" fa fa-paperclip"></i></button>
+                              <button type="button" class="btn btn-white"><i class=" fa fa-paperclip"></i></button>
               </div>
                
               <button class="btn btn-theme" name="sendmsg">Send</button>
+              <button class="btn btn-theme" name="clearmsg">Clear</button>
                 </form>
             </footer>
           </aside>

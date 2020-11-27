@@ -98,7 +98,12 @@ $id =$_SESSION['user'];
               </a>
           </li> 
           
-          
+              <li class="sub-menu">
+                              <a href="diagnose.php">
+                                <i class="fa fa-dashboard"></i>
+                                <span>Diabetic Risk TEST   </span>
+                            </a>
+                        </li> 
            
           <li class="sub-menu">
             <a href="chat_p.php">
@@ -172,19 +177,16 @@ $id =$_SESSION['user'];
           <div class="col-lg-12">
             <div class="form-panel">
                 <form action="" method="POST" class="form-horizontal style-form" > 
+                    <h3>  Normal BMI important .. </h3>
            
-             
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-             <button  class="btn btn-primary btn-lg btn-block" name="apt" > Confirm Appointment </button> 
-        
-                
+                    <h4><p>In general, the higher your BMI, the higher the risk of developing a range of conditions linked with excess weight, including:</p>
+-Diabetes<br>
+-Arthritis<br>
+-Liver disease<br>
+-Several types of cancer <br>
+-High blood pressure (hypertension)<br>
+-High cholesterol<br>
+-Sleep apnea.<br></h4></i>
               </form>
   
     

@@ -99,6 +99,14 @@ $id =$_SESSION['user'];
           </li> 
           
           
+              <li class="sub-menu">
+                              <a href="diagnose.php">
+                                <i class="fa fa-dashboard"></i>
+                                <span>Diabetic Risk TEST   </span>
+                            </a>
+                        </li> 
+          
+          
            
           <li class="sub-menu">
             <a href="chat_p.php">

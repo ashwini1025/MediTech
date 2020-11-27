@@ -18,7 +18,7 @@ if(isset($_POST['sendmsg']))
        if ($conn->query($sql) === TRUE) 
        {
     
-        header("location:chat.php");
+        header("location:doc_chat.php");
         }
  else {
    echo wrong; 

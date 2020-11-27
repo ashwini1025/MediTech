@@ -13,7 +13,7 @@ if(isset($_POST['loginP']))
     if(empty($_POST['usernameP']) || empty($_POST['passwordP']))
     {
           echo error  ;  
-          header("location:bookapt.php");   
+          header("location:login.php");   
          
      
     }
@@ -24,7 +24,7 @@ if(isset($_POST['loginP']))
        if(mysqli_fetch_assoc($result))
        {
           $_SESSION['user']= $_POST['usernameP'];
-         header("location:bookapt.php"); ////update this ashhh to go to page 2 
+         header("location:pat_records.php"); ////update this ashhh to go to page 2 
           $id= $_SESSION['user'];
           echo $id;
           
@@ -32,9 +32,9 @@ if(isset($_POST['loginP']))
         
        } else 
        {
-          echo error  ;  
-          header("location:index1.html");   ///update thisss locationnn ashhh
-          
+           
+       echo "<h1> Wrong inputs </h1>";
+          header("location:login.php");
        }
     }
     
@@ -42,6 +42,7 @@ if(isset($_POST['loginP']))
 }
  else 
  {
-   echo"here";
+    echo "<h1> Wrong inputs </h1>";
+     header("location:login.php");
  }
 

@@ -90,7 +90,12 @@ $id =$_SESSION['user'];
               </a>
           </li> 
           
-          
+              <li class="sub-menu">
+                              <a href="diagnose.php">
+                                <i class="fa fa-dashboard"></i>
+                                <span>Diabetic Risk TEST   </span>
+                            </a>
+                        </li> 
            
           <li class="sub-menu">
             <a href="about.php">
@@ -150,7 +155,8 @@ $id =$_SESSION['user'];
               <div class="sent-message">Your message has been sent. Thank you!</div>
 
              
-              <center><button type="button" class="btn btn-primary btn-lg"> I Agree</button></center>
+              <center><button type="button" class="btn btn-primary btn-lg"> I Agree</button>
+              <button type="button" class="btn btn-primary btn-lg">Disagree </button></center>
              
 
             </form>

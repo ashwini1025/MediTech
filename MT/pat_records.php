@@ -2,6 +2,10 @@
 <?php
 session_start();
 $id =$_SESSION['user'];
+
+$conn = mysqli_connect("localhost","root","", "meditech");
+$query="select * from personal_info where name='$id'" ;
+$result= mysqli_query($conn, $query);
 ?>
 
 
@@ -89,7 +93,12 @@ $id =$_SESSION['user'];
               </a>
           </li> 
           
-          
+              <li class="sub-menu">
+                              <a href="diagnose.php">
+                                <i class="fa fa-dashboard"></i>
+                                <span>Diabetic Risk TEST   </span>
+                            </a>
+                        </li> 
            
           <li class="sub-menu">
             <a href="chat_p.php">
@@ -116,7 +125,91 @@ $id =$_SESSION['user'];
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
-    
+     <section id="main-content">
+      <section class="wrapper">
+    <div class="row mt">
+    <div class="col-lg-12">
+        <div class="content-panel">
+        
+            
+            <div class="form-panel">
+            <form>
+                 <h3> Personal records :  <?php echo " @".$_SESSION['user']."" ?> </h3></center><br>
+               
+         
+                  <table  class=" table-hover table table-responsive ">
+                
+                <?php  while($row= mysqli_fetch_array($result))
+                                      {
+                    ?>
+                <tbody>
+                  <tr>
+                    <th>Patients ID</th>
+                    <td><?php echo $row['Patient_ID']; ?></td>
+                  </tr>
+                 
+                  <tr>
+                     <td>First Name</td> 
+                      <td><?php echo $row['name']; ?></td>
+                  </tr>
+                    
+                  <tr>
+                        <td>Last Name</td>
+                        <td><?php echo $row['Last_Name']; ?></td>
+                  </tr>
+                  
+                  <tr>
+                      <td>Age</td>
+                      <td><?php echo $row['Age']; ?></td>
+                  </tr>
+                  
+                  <tr>
+                      <td>Address</td>
+                      <td><?php echo $row['Address']; ?></td>
+                  </tr>
+                  
+                    <tr>
+                      <td>Issues</td>
+                      <td><?php echo $row['issue']; ?></td>
+                  </tr>
+                  
+                  <tr>
+                    <td> Allergies</td>
+                      <td><?php echo $row['Allergies']; ?></td>
+                  </tr>
+                  
+                  <tr>
+                    <td> Phone number</td>
+                      <td><?php echo $row['Phone']; ?></td>
+                  </tr>
+                  
+                  <tr>
+                    <td> Emergency Contact </td>
+                      <td><?php echo $row['Emergency_no']; ?></td>
+                  </tr>
+                  
+                  <tr>
+                    <td> Family Doctor </td>
+                      <td><?php echo $row['Family_doctor']; ?></td>
+                  </tr>
+                  
+                  <?php } ?>
+                </tbody>
+              </table>
+               
+                 
+                
+                
+                
+                <br><br>
+            </form>
+        </div>
+        
+    </div>
+    </div>
+    </div>
+      </section>
+     </section>
     <!-- /MAIN CONTENT -->
     <!--main content end-->
     <!--footer start-->

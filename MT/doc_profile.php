@@ -92,8 +92,7 @@ $result= mysqli_query($conn, $query);
             </a>
           </li>
           
-          
-           
+         
            <li class="sub-menu">
             <a href="about.php">
               <i class="fa fa-bell-o"></i>

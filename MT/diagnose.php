@@ -91,6 +91,13 @@ $id = $_SESSION['user'];
                                 <span>AI Disease prediction   </span>
                             </a>
                         </li> 
+                        
+                          <li class="sub-menu">
+                              <a href="diagnose.php">
+                                <i class="fa fa-dashboard"></i>
+                                <span>Diabetic Risk TEST   </span>
+                            </a>
+                        </li> 
 
                         <li class="sub-menu">
                             <a href="chat_p.php">
@@ -117,14 +124,12 @@ $id = $_SESSION['user'];
             <!--main content start-->
             <section id="main-content">
                 <section class="wrapper">
-                    <h3><i class="fa fa-asterisk-"></i>Answere the following question to take a Diabetic Type 2 risk AI evaluation test! </h3>
-                  
-                    <div class="row mt">
+                    <h3><i class="fa fa-asterisk-"></i><center><br><b>Diabetic Type 2 risk AI evaluation test! </h3></center></b>
+           <div class="row mt">
 
                         <div class="col-lg-12">
                             <div class="form-panel">
-                                <form action="" method="POST" class="form-horizontal style-form" > 
-
+                              
                                     <div class="col-lg-4">
                                         <center> <span><h3><b>Questions  </h3> </span><hr>
                                         <span><h3> 1. How old are you? </h3> </span>
@@ -135,7 +140,11 @@ $id = $_SESSION['user'];
                                         
                                          <br><span><h3> 4.  High Blood pressure?   </h3> </span>
                                          
-                                        
+                                         <br><span><h3> 5. High Cholesterol ?    </h3> </span>
+                                         
+                                           <br><span><h3> 6. Are you Physically active ?     </h3> </span>
+                                           
+                                             <br><span><h3> 7. Is your BMI normal?     </h3> </span>
                                         </center>
                                     </div>
                                     
@@ -144,29 +153,31 @@ $id = $_SESSION['user'];
                                         <span><h3><center><b>Select the suitable option </h3> </span><hr>
                                                         
                                         <!-- Question age-->                
-                                        <span> <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <span > 
+                                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                           <label class="btn btn-info ">
-                                            <input type="radio" name="age" id="age1" autocomplete="off" > Less than 20 
+                                            <input type="radio" name="age" id="age1" value="Less than 20" > Less than 20 
                                         </label>
                                         <label class="btn btn-info">
-                                            <input type="radio" name="age" id="age2" autocomplete="off"> Between 20- 40 
+                                            <input type="radio" name="age" id="age2" value="Between 20- 40"> Between 20- 40 
                                         </label>
                                         <label class="btn btn-info">
-                                            <input type="radio" name="age" id="age3" autocomplete="off"> Between 40 - 70 
+                                            <input type="radio" name="age" id="age3" value="Between 20- 40"> Between 40 - 70 
                                         </label>
                                         <label class="btn btn-info">
-                                            <input type="radio" name="age" id="age4" autocomplete="off"> Above 70 years
+                                            <input type="radio" name="age" id="age4" value="Above 70 years"> Above 70 years
                                         </label>
-                                            </div></span><br>
+                                            </div>
+                                         </span><br>
                                    <!-- age close -->
                                    
                                     <!-- Question gender-->                
                                     <br><br><span><div class="btn-group btn-group-toggle" data-toggle="buttons">
                                           <label class="btn btn-info ">
-                                            <input type="radio" name="gender" id="gender1" autocomplete="off" > Female
+                                            <input type="radio" name="gender" id="gender1" value="female" > Female
                                         </label>
                                         <label class="btn btn-info">
-                                            <input type="radio" name="gender" id="gender2" autocomplete="off"> Male  
+                                            <input type="radio" name="gender" id="gender2" value="male"> Male  
                                         </label>
                                      
                                         </div></span><br><br>
@@ -197,35 +208,61 @@ $id = $_SESSION['user'];
                                         </div></span>
                                    <!-- BP close -->
                                    
+                                   <!-- Question C's-->                
+                                   <br> <br><br><span><div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                          <label class="btn btn-info ">
+                                            <input type="radio" name="ch" id="ch1" autocomplete="off" > Yes
+                                        </label>
+                                        <label class="btn btn-info">
+                                            <input type="radio" name="ch" id="ch2" autocomplete="off"> No  
+                                        </label>
+                                     
+                                        </div></span>
+                                   <!-- c close -->
                                    
+                                   <!-- Question pa's-->                
+                                   <br> <br><br><br><span><div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                          <label class="btn btn-info ">
+                                            <input type="radio" name="pa" id="pa1" autocomplete="off" > Yes
+                                        </label>
+                                        <label class="btn btn-info">
+                                            <input type="radio" name="pa" id="pa2" autocomplete="off"> No  
+                                        </label>
+                                     
+                                        </div></span>
+                                   <!-- pa close -->
                                    
-                                   
-                                   
-                                   
-                                   
-                                   
-                                   
-                                   
+                                    <!-- Question pa's-->                
+                                    <br><br> <br><br><span><div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                          <label class="btn btn-info ">
+                                            <input type="radio" name="bmi" id="bmi1" autocomplete="off" > Yes
+                                        </label>
+                                        <label class="btn btn-info">
+                                            <input type="radio" name="bmi" id="bmi2" autocomplete="off"> No  
+                                        </label>
+                                     
+                                        </div></span>
+                                   <!-- pa close -->
+                  
                                </div>
 
-
-
-
                                     <br><br>
-                                    <button  class="btn btn-primary btn-lg btn-block" name="apt" >Diagnose  </button> 
-
-
-                                </form>
-
+                                    <input type="submit"  class="btn btn-primary btn-lg btn-block" value="Diagnose" name="apt" onclick="Diagnose()">  
 
                             </div>
                             <!-- /form-panel -->
                         </div>
                         <!-- /col-lg-12 -->
                     </div>
-
-
-
+                    
+                    
+                    <div class="form-panel">
+                        <h3>    <center>Results will be displayed here  : </h3><hr>
+                        <h4><center><b>   <span id="results"> </span> <br></center>
+                                    <h4><center><b>   <span id="placehere"> </span> <br></center>
+                                    <h4><center><b>   <span id="comments"> </span> <br></center>
+                  
+                    </div>
 
                 </section>
                 <!-- /MAIN CONTENT -->
@@ -256,30 +293,55 @@ $id = $_SESSION['user'];
             <script src="lib/common-scripts.js"></script>
             <!--script for this page-->
             <script type="text/javascript">
-                function computeBMI() {
-                    //Obtain user inputs
+                function Diagnose()
+                {
+                   //radio age
+                   
+	var ele = document.getElementsByName('age'); 
+	for(i = 0; i < ele.length; i++) 
+                   { 
+	if(ele[i].checked) 
+	var now_age= ele[i].value;
+       
+                    }
+           
+                    if(now_age == "Less than 20")
+                    {
+                         document.getElementById("results").innerHTML = "Low Risk ! ";
+                          var x =document.createElement("IMG");
+                                x.setAttribute("src", "low.jpg");
+                                x.setAttribute("width", "200");
+                                x.setAttribute("height", "150");
+                         document.getElementById("placehere").appendChild(x);
+                         document.getElementById("comments").innerHTML="Your risk for having type 2 diabetes is low. Only your doctor can tell for sure if you have diabetes or prediabetes. These conditions often do not cause any symptoms; so, don’t wait to make an appointment with your doctor";
 
-                    var weight = document.getElementById("weight").value;
-                    var height = document.getElementById("height").value;
+                    }
+                    else if (now_age == "Between 20- 40")
+                    {
+                          document.getElementById("results").innerHTML = "Medium Risk ! ";
+                          var x =document.createElement("IMG");
+                                x.setAttribute("src", "medium.jpg");
+                                x.setAttribute("width", "200");
+                                x.setAttribute("height", "150");
+                         document.getElementById("placehere").appendChild(x);
+                           document.getElementById("comments").innerHTML="Your risk for having type 2 diabetes is Medium. Only your doctor can tell for sure if you have diabetes or prediabetes. These conditions often do not cause any symptoms; so, don’t wait to make an appointment with your doctor";
 
-                    //Perform calculation
-                    var BMI = weight / Math.pow(height, 2);
+                    }
+                    else
+                    {
+                          document.getElementById("results").innerHTML = "High Risk ! ";
+                          var x =document.createElement("IMG");
+                                x.setAttribute("src", "high.jpg");
+                                x.setAttribute("width", "200");
+                                x.setAttribute("height", "150");
+                         document.getElementById("placehere").appendChild(x);
+                          document.getElementById("comments").innerHTML="Your risk for having type 2 diabetes is high. Only your doctor can tell for sure if you have diabetes or prediabetes. These conditions often do not cause any symptoms; so, don’t wait to make an appointment with your doctor";
 
-                    //Display result of calculation
-
-                    document.getElementById("output").innerHTML = Math.round(BMI * 1000000) / 100;
-                    var roundoff = Math.round(BMI * 1000000) / 100;
-                    //document.write(BMI);
-                    if (roundoff < 18.5)
-                        document.getElementById("comment").innerHTML = "Underweight";
-                    if (roundoff >= 18.5 && BMI <= 25)
-                        document.getElementById("comment").innerHTML = "Normal";
-                    if (roundoff >= 25 && BMI <= 30)
-                        document.getElementById("comment").innerHTML = "Obese";
-                    if (roundoff > 30)
-                        document.getElementById("comment").innerHTML = "Overweight";
-
+                    }
+               	
                 }
+                
+               
 
             </script>
     </body>

@@ -28,7 +28,7 @@
         <!-- Scripting for validation   -->
         <style>
             body{
-                background-image: url('img/bb.jpg');
+                background-image: url('two_1.jpg');
                 background-repeat: no-repeat;
                 background-size: cover;
 
@@ -43,7 +43,7 @@
         <!-- **********************************************************************************************************************************************************
             MAIN CONTENT
             *********************************************************************************************************************************************************** -->
-        <h1 align="center"> <br><br>  </h1> 
+    <br><h1 style ="color:white"> <center style="font-size:50px; ">MediTech E-health platform</h1></center>
         <div id="login-page" >     
             <div class="col-md-6">
                 <form name="signin" class="form-login"  action="connDB.php" method="post" >
@@ -59,10 +59,8 @@
                         <hr>
 
                         <div class="registration">
-                            Don't have an account yet?<br/>
-                            <a data-toggle="modal" href="login.html#myModal">
-                                Create an account
-                            </a>
+                          Enter your credential's to access the best e-healthcare Meditech can provide<br/>
+
                             </form>
 
                         </div>
@@ -117,10 +115,7 @@
                         <hr>
 
                         <div class="registration">
-                            Don't have an account yet?<br/>
-                            <a data-toggle="modal" href="login.html#myModaldoc">
-                                Create an account
-                            </a>
+                               Enter your credential's to access the best e-healthcare Meditech can provide<br/>
                             </form>
 
                         </div>
