@@ -43,7 +43,7 @@ $id = $_SESSION['user'];
                     <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
                 </div>
                 <!--logo start-->
-                <a href="index.html" class="logo"><b>MEDI<span>TECH</span><img src="img/LOGO.png" height="50" width="50"></b>  <b align="center"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;WELCOME TO DOCTORS PORTAL </b></a>
+                <a href="index.html" class="logo"><b>MEDI<span>TECH</span><img src="img/LOGO.png" height="50" width="50"></b>  <b align="center"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;WELCOME TO PATIENTS PORTAL </b></a>
                 <!--logo end-->
                 <?php $timestamp = time();
                 echo "\n";
@@ -123,7 +123,8 @@ $id = $_SESSION['user'];
                 *********************************************************************************************************************************************************** -->
             <!--main content start-->
             <section id="main-content">
-                <section class="wrapper">
+                <div id="content">
+                    <section class="wrapper">
                     <h3><i class="fa fa-asterisk-"></i><center><br><b>Diabetic Type 2 risk AI evaluation test! </h3></center></b>
            <div class="row mt">
 
@@ -248,7 +249,7 @@ $id = $_SESSION['user'];
 
                                     <br><br>
                                     <input type="submit"  class="btn btn-primary btn-lg btn-block" value="Diagnose" name="apt" onclick="Diagnose()">  
-
+                                    <button class="btn btn-primary btn-lg btn-block" id="cmd" onclick="window.print()">generate PDF</button>
                             </div>
                             <!-- /form-panel -->
                         </div>
@@ -265,6 +266,8 @@ $id = $_SESSION['user'];
                     </div>
 
                 </section>
+                    
+                </div>
                 <!-- /MAIN CONTENT -->
                 <!--main content end-->
                 <!--footer start-->
@@ -291,9 +294,13 @@ $id = $_SESSION['user'];
             <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
             <!--common script for all pages-->
             <script src="lib/common-scripts.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
             <!--script for this page-->
             <script type="text/javascript">
-                function Diagnose()
+               
+   
+    
+    function Diagnose()
                 {
                    //radio age
                    
@@ -340,6 +347,46 @@ $id = $_SESSION['user'];
                     }
                	
                 }
+  function demoFromHTML() {
+    var pdf = new jsPDF('p', 'pt', 'letter');
+    // source can be HTML-formatted string, or a reference
+    // to an actual DOM element from which the text will be scraped.
+    source = $('#content')[0];
+
+    // we support special element handlers. Register them with jQuery-style 
+    // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+    // There is no support for any other type of selectors 
+    // (class, of compound) at this time.
+    specialElementHandlers = {
+        // element with id of "bypass" - jQuery style selector
+        '#bypassme': function (element, renderer) {
+            // true = "handled elsewhere, bypass text extraction"
+            return true
+        }
+    };
+    margins = {
+        top: 80,
+        bottom: 60,
+        left: 40,
+        width: 522
+    };
+    // all coords and widths are in jsPDF instance's declared units
+    // 'inches' in this case
+    pdf.fromHTML(
+    source, // HTML string or DOM elem ref.
+    margins.left, // x coord
+    margins.top, { // y coord
+        'width': margins.width, // max width of content on PDF
+        'elementHandlers': specialElementHandlers
+    },
+
+    function (dispose) {
+        // dispose: object with X, Y of the last line add to the PDF 
+        //          this allow the insertion of new lines after html
+        pdf.save('Test.pdf');
+    }, margins);
+}
+
                 
                
 
