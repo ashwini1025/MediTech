@@ -12,8 +12,7 @@ After downloading you need to start
 
 2. You can use database on : http://localhost/phpmyadmin
 
-3. To access meditech functionalities you need to import .sql into phpmyadmin database
-.sql file can be found here : [meditech.sql](https://github.com/ashwini1025/MediTech/blob/master/meditech.sql)
+3. To access meditech functionalities you need to import .sql into phpmyadmin database [meditech.sql](https://github.com/ashwini1025/MediTech/blob/master/meditech.sql)
 
 
 ## Author
